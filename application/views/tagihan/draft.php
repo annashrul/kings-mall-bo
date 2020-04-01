@@ -33,6 +33,6 @@
 
 <script>
 	function pindah(){
-		window.location.href = "<?=base_url().'tagihan?session='.$token.'&hal=timeline';?>";
+		window.location.href = "<?=base_url().'tagihan?session='.$token.'&q='.base64_encode('timeline');?>";
 	}
 </script>

@@ -1,122 +1,130 @@
 <div class="multisteps-form__content">
 	<div class="row">
-		<div class="col-6 col-sm-6">
-			<div class="form-group row">
-				<label class="col-4 col-sm-4text-left">Periode Sewa Awal</label>
-				<input type="text" class="form-control col-8 col-sm-8" aria-describedby="textHelp" placeholder="">
-				<small id="textHelp" class="form-text text-muted"></small>
+		<div class="col-4 col-sm-3">
+			<div class="form-group">
+				<label>Periode Sewa Awal</label>
+				<input type="text" class="form-control" aria-describedby="textHelp" placeholder="">
+
 			</div>
-			<div class="form-group row">
-				<label class="col-4 col-sm-4text-left">Masa Sewa</label>
-				<input type="text" class="form-control col-4 col-sm-4" aria-describedby="textHelp" placeholder="">
-				<select class="form-control col-4 col-sm-4" id="exampleSelectGender">
+			<div class="form-group">
+				<label>Masa Sewa</label>
+				<input type="text" class="form-control" aria-describedby="textHelp" placeholder="">
+				<select class="form-control" id="exampleSelectGender">
 					<option>List</option>
 					<option>List</option>
 				</select>
-				<small id="textHelp" class="form-text text-muted"></small>
+
 			</div>
-			<div class="form-group row">
-				<label class="col-4 col-sm-4text-left">Periode Sewa Akhir</label>
-				<input type="text" class="form-control col-8 col-sm-8" aria-describedby="textHelp" placeholder="">
-				<small id="textHelp" class="form-text text-muted"></small>
+			<div class="form-group ">
+				<label>Periode Sewa Akhir</label>
+				<input type="text" class="form-control" aria-describedby="textHelp" placeholder="">
 			</div>
-			<div class="form-group row">
-				<label class="col-4 col-sm-4text-left">Nilai Sewa</label>
-				<input type="text" class="form-control col-8 col-sm-8" aria-describedby="textHelp" placeholder="">
-				<small id="textHelp" class="form-text text-muted"></small>
+			<div class="form-group ">
+				<label>Nilai Sewa</label>
+				<input type="text" class="form-control" aria-describedby="textHelp" placeholder="">
 			</div>
-			<div class="form-group row">
-				<label class="col-4 col-sm-4text-left">Diskon</label>
-				<input type="text" class="form-control col-8 col-sm-8" aria-describedby="textHelp" placeholder="">
-				<small id="textHelp" class="form-text text-muted"></small>
+			<div class="form-group ">
+				<label>Diskon</label>
+				<input type="text" class="form-control" aria-describedby="textHelp" placeholder="">
 			</div>
-			<div class="form-group row">
-				<label class="col-4 col-sm-4text-left">Nilai Sewa yang dibayar</label>
-				<input type="text" class="form-control col-8 col-sm-8" aria-describedby="textHelp" placeholder="">
-				<small id="textHelp" class="form-text text-muted"></small>
+			<div class="form-group ">
+				<label>Nilai Sewa yang dibayar</label>
+				<input type="text" class="form-control" aria-describedby="textHelp" placeholder="">
 			</div>
-			<div class="form-group row">
-				<label class="col-4 col-sm-4text-left">Persentase DP (%)</label>
-				<input type="text" class="form-control col-8 col-sm-8" aria-describedby="textHelp" placeholder="">
-				<small id="textHelp" class="form-text text-muted"></small>
+			<div class="form-group ">
+				<label>Persentase DP (%)</label>
+				<input type="text" class="form-control" aria-describedby="textHelp" placeholder="">
 			</div>
-			<div class="form-group row">
-				<label class="col-4 col-sm-4text-left">DP/Cicilan</label>
-				<input type="text" class="form-control col-8 col-sm-8" aria-describedby="textHelp" placeholder="">
-				<small id="textHelp" class="form-text text-muted"></small>
+			<div class="form-group ">
+				<label>DP/Cicilan</label>
+				<input type="text" class="form-control" aria-describedby="textHelp" placeholder="">
 			</div>
-			<div class="form-group row">
-				<label class="col-4 col-sm-4text-left">PPN(%)</label>
-				<select class="form-control col-8 col-sm-8" id="exampleSelectGender">
+			<div class="form-group ">
+				<label>PPN(%)</label>
+				<select class="form-control" id="exampleSelectGender">
 					<option>List</option>
 					<option>List</option>
 				</select>
-				<small id="textHelp" class="form-text text-muted"></small>
 			</div>
-			<div class="form-group row">
-				<label class="col-4 col-sm-4text-left">PPN</label>
-				<input type="text" class="form-control col-8 col-sm-8" aria-describedby="textHelp" placeholder="">
-				<small id="textHelp" class="form-text text-muted"></small>
+			<div class="form-group">
+				<label>PPN</label>
+				<input type="text" class="form-control" aria-describedby="textHelp" placeholder="">
 			</div>
 		</div>
-		<div class="col-6 col-sm-6">
-			<div class="form-group row">
-				<label class="col-4 col-sm-4text-left">Booking Fee</label>
-				<input type="text" class="form-control col-8 col-sm-8" aria-describedby="textHelp" placeholder="">
-				<small id="textHelp" class="form-text text-muted"></small>
+		<div class="col-4 col-sm-4">
+			<div class="form-group">
+				<label>Booking Fee</label>
+				<input type="text" class="form-control" aria-describedby="textHelp" placeholder="">
 			</div>
-			<div class="form-group row">
-				<label class="col-4 col-sm-4text-left">Total DP/Cicilan</label>
-				<input type="text" class="form-control col-8 col-sm-8" aria-describedby="textHelp" placeholder="">
-				<small id="textHelp" class="form-text text-muted"></small>
+			<div class="form-group">
+				<label>Total DP/Cicilan</label>
+				<input type="text" class="form-control" aria-describedby="textHelp" placeholder="">
 			</div>
-			<div class="form-group row">
-				<label class="col-4 col-sm-4text-left">Lampiran</label>
-				<input type="text" class="form-control col-8 col-sm-8" aria-describedby="textHelp" placeholder="">
-				<small id="textHelp" class="form-text text-muted"></small>
+			<div class="form-group">
+				<label>Lampiran</label>
+				<input type="text" class="form-control" aria-describedby="textHelp" placeholder="">
 			</div>
-			<div class="form-group row">
-				<label class="col-4 col-sm-4text-left">Catatan</label>
-				<input type="text" class="form-control col-8 col-sm-8" aria-describedby="textHelp" placeholder="">
-				<small id="textHelp" class="form-text text-muted"></small>
+			<div class="form-group">
+				<label>Catatan</label>
+				<input type="text" class="form-control" aria-describedby="textHelp" placeholder="">
 			</div>
-			<div class="form-group row">
-				<label class="col-4 col-sm-4text-left">Tanggal Deal Form</label>
-				<input type="text" class="form-control col-8 col-sm-8" aria-describedby="textHelp" placeholder="">
-				<small id="textHelp" class="form-text text-muted"></small>
+			<div class="form-group">
+				<label>Tanggal Deal Form</label>
+				<input type="text" class="form-control" aria-describedby="textHelp" placeholder="">
 			</div>
-			<div class="form-group row">
-				<label class="col-4 col-sm-4text-left">Pembayaran</label>
-				<select class="form-control col-8 col-sm-8" id="exampleSelectGender">
+			<div class="form-group">
+				<label>Pembayaran</label>
+				<select class="form-control" id="exampleSelectGender">
 					<option>List</option>
 					<option>List</option>
 				</select>
-				<small id="textHelp" class="form-text text-muted"></small>
 			</div>
-			<div class="form-group row">
-				<label class="col-4 col-sm-4text-left">Pembayaran DP Ke-1</label>
-				<select class="form-control col-4 col-sm-4" id="exampleSelectGender">
+			<div class="form-group">
+				<label>Pembayaran DP Ke-1</label>
+				<div class="row">
+					<select class="form-control col-6 col-sm-6" id="exampleSelectGender">
+						<option>List</option>
+						<option>List</option>
+					</select>
+					<select class="form-control col-6 col-sm-6" id="exampleSelectGender">
+						<option>List</option>
+						<option>List</option>
+					</select>
+				</div>
+
+			</div>
+			<div class="form-group">
+				<label>Jumlah Cicilan DP</label>
+				<input type="text" class="form-control" aria-describedby="textHelp" placeholder="">
+			</div>
+			<div class="form-group">
+				<label>Tipe Persetujuan</label>
+				<select class="form-control" id="exampleSelectGender">
 					<option>List</option>
 					<option>List</option>
 				</select>
-				<select class="form-control col-4 col-sm-4" id="exampleSelectGender">
-					<option>List</option>
-					<option>List</option>
-				</select>
-				<small id="textHelp" class="form-text text-muted"></small>
 			</div>
-			<div class="form-group row">
-				<label class="col-4 col-sm-4text-left">Jumlah Cicilan DP</label>
-				<input type="text" class="form-control col-8 col-sm-8" aria-describedby="textHelp" placeholder="">
-				<small id="textHelp" class="form-text text-muted"></small>
-			</div>
-			<div class="form-group row">
-				<label class="col-4 col-sm-4text-left">Tipe Persetujuan</label>
-				<select class="form-control col-8 col-sm-8" id="exampleSelectGender">
-					<option>List</option>
-					<option>List</option>
-				</select>
-				<small id="textHelp" class="form-text text-muted"></small>
+		</div>
+		<div class="col-4 col-sm-5">
+			<div class="table-responsive">
+				<table class="table table-striped table-hover table-bordered">
+					<thead class="primary-color">
+					<tr>
+						<th class="text-white">Lantai</th>
+						<th class="text-white">Unit</th>
+						<th class="text-white">Unit (M<sup>2</sup>)</th>
+						<th class="text-white">Harga /(M<sup>2</sup>)</th>
+					</tr>
+					</thead>
+					<tbody>
+					<tr>
+						<td>Dummy</td>
+						<td>Dummy</td>
+						<td>Dummy</td>
+						<td>Dummy</td>
+					</tr>
+					</tbody>
+				</table>
 			</div>
 		</div>
 	</div>

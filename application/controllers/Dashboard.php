@@ -6,22 +6,20 @@ class Dashboard extends CI_Controller{
 		parent::__construct();
 		$this->load->library('session');
 		$this->load->helper('my_helper');
-		if($this->session->userdata('logged_in') == false){
-			redirect("auth");
-		}
+		$this->control = 'dashboard';
+		if(authorization()==false)exitApp();
 	}
-
 	public function index(){
-		if(password_verify(mySession("username").mySession("id"),$_GET['session'])){
-			$data['token'] = password_hash(mySession("username").mySession("id"),PASSWORD_DEFAULT);
-			$data['page'] = 'dashboard';
-			$data['content'] = 'dashboard/index';
+		if(authorization()==true){
+			$data['token'] = uniq();
+			$data['page'] = $this->control;
+			$data['content'] = $this->control.'/index';
 			$this->load->view('layout/index',$data);
 		}
 		else{
-			$this->session->unset_userdata();
-			redirect("auth");
+			exitApp();
 		}
+
     }
 
 

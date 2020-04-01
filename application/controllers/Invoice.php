@@ -8,21 +8,19 @@ class Invoice extends CI_Controller
 		parent::__construct();
 		$this->load->library('session');
 		$this->load->helper('my_helper');
-		if($this->session->userdata('logged_in') == false){
-			redirect("auth");
-		}
+		if(authorization()==false)exitApp();
+		$this->control = 'invoice';
 	}
-
 	public function index(){
-		if(password_verify(mySession("username").mySession("id"),$_GET['session'])){
-			$data['token'] = password_hash(mySession("username").mySession("id"),PASSWORD_DEFAULT);
-			$data['page'] = base64_decode($_GET['XYZ']);
-			$data['content'] = 'invoice/'.base64_decode($_GET['XYZ']);
+		if(authorization()==true){
+			$q=base64_decode($_GET['q']);
+			$data['token'] = uniq();
+			$data['page'] = $q;
+			$data['content'] = $this->control.'/'.$q;
 			$this->load->view('layout/index',$data);
 		}
 		else{
-			$this->session->unset_userdata();
-			redirect("auth");
+			exitApp();
 		}
 	}
 }

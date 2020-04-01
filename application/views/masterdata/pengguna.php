@@ -208,15 +208,15 @@
 		},
 		//For custom messages
 		messages: {
-			kode:{required: "Kode tidak boleh kosong!"},
-			nama:{required: "Nama tidak boleh kosong!"},
-			tipe:{required: "Tipe tidak boleh kosong!"},
-			lantai:{required: "Lantai tidak boleh kosong!"},
-			luas:{required: "Luas tidak boleh kosong!"},
-			harga:{required: "Harga tidak boleh kosong!"},
-			daya:{required: "Daya Listrik tidak boleh kosong!"},
-			jenis:{required: "Jenis Meteran tidak boleh kosong!"},
-			factor:{required: "Factor Meter tidak boleh kosong!"},
+			kode:{required: "tidak boleh kosong!"},
+			nama:{required: "tidak boleh kosong!"},
+			tipe:{required: "tidak boleh kosong!"},
+			lantai:{required: "tidak boleh kosong!"},
+			luas:{required: "tidak boleh kosong!"},
+			harga:{required: "tidak boleh kosong!"},
+			daya:{required: "tidak boleh kosong!"},
+			jenis:{required: "tidak boleh kosong!"},
+			factor:{required: "tidak boleh kosong!"},
 
 		},
 		errorElement : 'div',
@@ -242,7 +242,7 @@
 				beforeSend: function() {$('body').append('<div class="first-loader"><img src="<?=base_url()?>assets/images/spin.svg"></div>');},
 				complete: function() {$('.first-loader').remove();},
 				success: function (res) {
-					if (res.status == 'success') {
+					if (res.status === 'success') {
 						loadData(1);
 						$("#modalTenant").modal('hide');
 						document.getElementById("formTenant").reset();

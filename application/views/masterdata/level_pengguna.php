@@ -2,11 +2,10 @@
 <div class="main-content">
 	<div class="dashboard-area">
 		<div class="container-fluid">
-			<h4 class="card-title">Tambah Bank &nbsp; <a href="javascript:void(0)" onclick="showForm('bank')"><i class="fa fa-plus btn btn-info btn-circle rotate0"></i></a></h4>
-
+			<h4 class="card-title">Tambah <?=rplc_($page)?> &nbsp; <a href="javascript:void(0)" onclick="showForm('<?=$page?>')"><i class="fa fa-plus btn btn-info btn-circle rotate0"></i></a></h4>
 			<div class="card mt-3 fadeInUp animated" id="cdList">
 				<div class="card-body">
-					<h4 class="card-title">List Master Bank</h4>
+					<h4 class="card-title">List Master <?=rplc_($page)?></h4>
 					<hr>
 					<!-- <div class="col-12"> -->
 					<form class="form-inline d-flex justify-content-between">
@@ -27,6 +26,7 @@
 							</select>
 						</div>
 					</form>
+
 					<!-- </div> -->
 					<div class="table-responsive">
 						<table class="table table-striped table-hover">
@@ -69,36 +69,83 @@
 	</div>
 </div>
 
+<style>
+	.modal-full {
+		min-width: 100%;
+		margin: 0;
+	}
+
+	.modal-full .modal-content {
+		min-height: 100vh;
+	}
+</style>
 
 
-<div class="modal fade" tabindex="-1" role="dialog" data-backdrop="static" id="modalBank" style="display: none">
-	<div class="modal-dialog">
-		<div class="modal-content">
+<div class="modal fade" tabindex="-1" role="dialog" data-backdrop="static" id="modal<?=$page?>" style="display: none">
+	<div class="modal-dialog modal-full">
+		<div class="modal-content full_modal-content">
 			<div class="modal-header">
-				<h4 class="modal-title">Tambah Bank</h4>
+				<h4 class="modal-title" id="modalTitle<?=rplc_($page)?>"></h4>
+				<button type="button" class="close" data-dismiss="modal">&times;</button>
 			</div>
-			<form class="form-horizontal" id="formBank">
+			<form class="form-horizontal" id="form<?=$page?>">
 				<div class="modal-body">
-					<div class="box-body">
-						<div class="form-group">
-							<?php $field = 'nama'; ?>
-							<label for="<?=$field?>>">Nama</label>
-							<input type="text" name="<?=$field?>" class="form-control" id="<?=$field?>" autocomplete="off">
-						</div>
+					<div class="form-group">
+						<?php $field = 'user_level'; ?>
+						<label for="<?=$field?>">Nama Level</label>
+						<input type="text" name="<?=$field?>" id="<?=$field?>" class="form-control">
 					</div>
-					<div class="box-body">
-						<div class="form-group">
-							<?php $field = 'norek'; ?>
-							<label for="<?=$field?>>">Nomer Rekening</label>
-							<input type="text" name="<?=$field?>" class="form-control" id="<?=$field?>" autocomplete="off">
-						</div>
-					</div>
-					<div class="box-body">
-						<div class="form-group">
-							<?php $field = 'atasnama'; ?>
-							<label for="<?=$field?>>">Atas Nama</label>
-							<input type="text" name="<?=$field?>" class="form-control" id="<?=$field?>" autocomplete="off">
-						</div>
+					<?php $access_menu = array(
+						'Tagihan'=>array(0=>'Tagihan'),     // 0
+						'Dealform'=>array(1=>'Deal Form'),     // 0
+						'Masterdata'=>array(
+							2=>'Unit',
+							3=>'Tipe',
+							4=>'Lantai',
+							5=>'Bank',
+							6=>'Tenant',
+							7=>'Pengguna',
+							8=>'Level Pengguna'
+						),
+						'Booking'=>array(
+							11=>'Form Booking',
+							12=>'List Booking'
+						),
+						'Laporan'=>array(
+							21=>'Pembayaran Tenant',
+							22=>'Pendapatan',
+							23=>'Deal',
+							24=>'Outstanding Tagihan',
+						),
+					);?>
+					<input type="hidden" id="jumlah" name="jumlah" value="300" />
+					<div class="row">
+						<?php foreach($access_menu as $row => $value){ ?>
+							<div class="col-12" style="margin-bottom: 10px; border: 1px dotted black;padding:10px;">
+								<?php $field = $row; ?>
+								<div class="custom-control custom-checkbox">
+									<input onclick="check('<?=str_replace(' ', '_', $field)?>')" type="checkbox" class="custom-control-input" id="<?=str_replace(' ', '_', $field)?>" name="<?=$field?>" value="1" >
+									<label class="custom-control-label" for="<?=$field?>"> <?=strtoupper($row)?></label>
+								</div>
+								<div class="row">
+									<div class="col-12">
+										<?php if(is_array($value)){ ?>
+										<div class="row">
+											<?php foreach($value as $rows => $values){ ?>
+												<?php $field = $rows; ?>
+												<div class="col-2" style="padding: 15px;margin-top: 2px;">
+													<div class="custom-control custom-checkbox">
+														<input type="checkbox" class="custom-control-input <?=str_replace(' ', '_', $row)?>" id="<?=$field?>" name="<?=$field?>" value="1">
+														<label class="custom-control-label" for="<?=$field?>"> <?=$values?></label>
+													</div>
+												</div>
+											<?php } ?>
+										</div>
+										<?php } ?>
+									</div>
+								</div>
+							</div>
+						<?php } ?>
 					</div>
 				</div>
 				<div class="modal-footer">
@@ -118,8 +165,18 @@
 <script type="text/javascript">
 	// Example starter JavaScript for disabling form submissions if there are invalid fields
 	$(document).ready(function(){
-		loadData(1);
+		// loadData(1);
 	});
+
+	function check(param){
+		console.log(param);
+		if ($("#"+param).is(":checked")) {
+			$("."+param).prop('checked', true);
+		} else {
+			$("."+param).prop('checked', false);
+		}
+	}
+
 
 	function loadData(page,data={}){
 		$.ajax({
@@ -140,52 +197,28 @@
 	}
 
 	function showForm(param){
-		if(param === 'bank'){
+		if(param === '<?=$page?>'){
+			$("#modalTitle<?=$page?>").text("Tambah <?=rplc_($page)?>");
 			setTimeout(function () {
 				$("#nama").focus();
 			}, 600);
-			$("#modalBank").modal('show');
+			$("#modal<?=$page?>").modal('show');
 		}
 	}
-	$('#formBank').validate({
-		rules: {
-			nama: {required: true},
-			norek: {required: true},
-			atasnama: {required: true},
-		},
-		//For custom messages
-		messages: {
-			nama:{required: "tidak boleh kosong!"},
-			norek:{required: "tidak boleh kosong!"},
-			atasnama:{required: "tidak boleh kosong!"},
-		},
-		errorElement : 'div',
-		errorPlacement: function(error, element) {
-			var placement = $(element).data('error');
-			var type = $(element).attr("type");
-			if (placement) {
-				$(placement).append(error)
-			} else {
-				if (type === "radio") {
-					error.insertAfter(".errorRadio");
-				} else {
-					error.insertAfter(element);
-				}
-			}
-		},
+	$('#form<?=$page?>').validate({
 		submitHandler: function (form) {
 			$.ajax({
-				url: "<?=base_url().'masterdata/tipe/simpan?session='.$token?>",
+				url: "<?=base_url().$control.'/'.base64_decode($_GET['q']).'/simpan?session='.$token?>",
 				type: "POST",
 				dataType: "JSON",
-				data: {namaTipe:'acuy'},
+				data: $("#form<?=$page?>").serialize(),
 				beforeSend: function() {$('body').append('<div class="first-loader"><img src="<?=base_url()?>assets/images/spin.svg"></div>');},
 				complete: function() {$('.first-loader').remove();},
 				success: function (res) {
-					if (res.status == 'success') {
-						$("#modalBank").modal('hide');
-						document.getElementById("formBank").reset();
-						$( "#formBank" ).validate().resetForm();
+					if (res.status === 'success') {
+						$("#modal<?=$page?>").modal('hide');
+						document.getElementById("form<?=$page?>").reset();
+						$( "#form<?=$page?>" ).validate().resetForm();
 						Swal.fire({
 							icon: "success",
 							title: 'Horay...',

@@ -17,12 +17,7 @@ class Allform extends CI_Controller
 		if(password_verify(mySession("username").mySession("id"),$_GET['session'])){
 			$data['token'] = password_hash(mySession("username").mySession("id"),PASSWORD_DEFAULT);
 			$data['page'] = $_GET['hal'];
-			if($_GET['hal']=='booking'){
-				$data['content'] = 'allform/'.$_GET['hal'].'/index';
-			}else{
-				$data['content'] = 'allform/'.$_GET['hal'];
-			}
-
+			$data['content'] = 'allform/'.$_GET['hal'];
 			$this->load->view('layout/index',$data);
 		}
 		else{

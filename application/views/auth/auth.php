@@ -48,20 +48,33 @@
 								<div class="col-md-6">
 									<!-- Logo -->
 									<h4 class="font-18 mb-30">Welcome back! Log in to your account.</h4>
+									<form action="<?=base_url().'auth'?>" method="post">
+										<script type="application/javascript">
+											/** After windod Load */
+											$(window).bind("load", function() {
+												window.setTimeout(function() {
+													$(".alert").fadeTo(500, 0).slideUp(500, function(){
+														$(this).remove();
+													});
+												}, 4000);
+											});
+										</script>
 
-									<form action="#"  id="form_login">
+
 										<div class="form-group">
+											<?php $field = 'email'; ?>
 											<label class="lock-text text-dark">Email</label>
-											<input type="email" class="form-control height-50" id="email" name="email" placeholder="Email" required>
+											<input type="<?=$field?>" class="form-control height-50" id="<?=$field?>" name="<?=$field?>" placeholder="Email" >
+											<?=form_error($field, '<div class="error" style="color:red;">', '</div>')?>
 										</div>
-
 										<div class="form-group">
-											<label for="password">Password</label>
-											<input class="form-control  height-50" type="password" id="pass" name="pass" placeholder="Password" required>
+											<?php $field = 'password'; ?>
+											<label for="<?=$field?>">Password</label>
+											<input class="form-control  height-50" type="password" id="<?=$field?>" name="<?=$field?>" placeholder="Password" >
+											<?=form_error($field, '<div class="error" style="color:red;">', '</div>')?>
 										</div>
-
 										<div class="form-group mb-0">
-											<button class="btn btn-primary btn-block" type="button" id="btn_login" data="form_login">Login</button>
+											<button class="btn btn-primary btn-block" type="submit" id="btn_logins">Login</button>
 										</div>
 									</form>
 								</div> <!-- end card-body -->
@@ -91,22 +104,16 @@
 <script src="<?=base_url().'assets/'?>js/default-assets/sweetalert-init.js"></script>
 
 <script type="text/javascript">
-
 	$(document).ready(function() {
 		$("#email").focus();
 	});
 
-
-
-	$(document).on("click", "#btn_login", function(e){
-		e.stopPropagation();
+	function login(){
 		var id = $(this).attr('data');
 		var ax = $("#"+id)[0];
 		var dat = new FormData(ax);
 		console.log(dat);
-		//if($("#"+id).valid()==true){
-		if($("#email").val() == "" || $("#pass").val() == ""){
-			// $("#err_form").text("email atau password tidak boleh kosong");
+		if($("#email").val() === "" || $("#pass").val() === ""){
 			Swal.fire({
 				icon: 'error',
 				title: 'Oops...',
@@ -122,7 +129,7 @@
 				contentType: false,
 				enctype: 'multipart/form-data',
 				success: function(data){
-					if(data.status=='success'){
+					if(data.status==='success'){
 						ax.reset();
 						// swal(data.pesan, "", data.class);
 						document.location=data.redirect;
@@ -137,9 +144,7 @@
 				}
 			});
 		}
-
-		//}
-	});
+	}
 </script>
 <!-- Mirrored from demo.riktheme.com/motrila-2/side-menu/login.html by HTTrack Website Copier/3.x [XR&CO'2014], Fri, 03 Jan 2020 17:30:50 GMT -->
 </html>

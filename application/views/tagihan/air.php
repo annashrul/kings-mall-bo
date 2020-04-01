@@ -6,14 +6,14 @@
 				<div class="input-group col-8 col-sm-8" style="padding: unset;">
 					<input type="text" name="t_air[]" id="no_loi" class="form-control" placeholder="" aria-label="">
 					<div class="input-group-append">
-						<button class="btn btn-dark  " type="button">Cari</button>
+						<button class="btn btn-dark" type="button">Cari</button>
 					</div>
 				</div>
 				<small id="no_loiHelp" class="form-text text-muted"></small>
 			</div>
 			<div class="form-group row">
 				<label class="col-4 col-sm-4 text-left">Unit</label>
-				<input type="text" name="t_air[]" id="input" class="form-control col-8 col-sm-8" aria-describedby="textHelp" placeholder="">
+				<input value="<?=base64_decode($_GET['oq'])=='lanjut'? 'upnormal' :null?>" type="text" name="t_air[]" id="input" class="form-control col-8 col-sm-8" aria-describedby="textHelp" placeholder="">
 				<small id="inputHelp" class="form-text text-muted"></small>
 			</div>
 			<div class="form-group row">

@@ -32,5 +32,57 @@
 <script src="<?=base_url().'assets/'?>js/default-assets/file-upload.js"></script>
 <script src="<?=base_url().'assets/'?>js/default-assets/basic-form.js"></script>
 
-<!-- Mirrored from demo.riktheme.com/motrila-2/side-menu/index.html by HTTrack Website Copier/3.x [XR&CO'2014], Fri, 03 Jan 2020 17:25:16 GMT -->
+<script>
+	/*date range*/
+	function get_daterange(type) {
+		var output = null;
+		$.ajax({
+			url: "http://localhost/bo_nov/site/get_session_date/" + type,
+			type: "GET",
+			async: false,
+			success: function (res) {
+				output = res;
+			}
+		});
+		return output;
+	}
+
+	var startDate = get_daterange('startDate');
+	var endDate = get_daterange('endDate');
+
+	$('#daterange').daterangepicker({
+		"showDropdowns": true,
+		"ranges": {
+			'Hari Ini': [moment(), moment()],
+			'Kemarin': [moment().subtract(1, 'days'), moment().subtract(1, 'days')],
+			'7 Hari Terakhir': [moment().subtract(6, 'days'), moment()],
+			'30 Hari Terakhir': [moment().subtract(29, 'days'), moment()],
+			'Minggu Ini': [moment().startOf('isoWeek'), moment().endOf('isoWeek')],
+			'Minggu Lalu': [moment().subtract(1, 'weeks').startOf('isoWeek'), moment().subtract(1, 'weeks').endOf('isoWeek')],
+			'Bulan Ini': [moment().startOf('month'), moment().endOf('month')],
+			'Bulan Lalu': [moment().subtract(1, 'month').startOf('month'), moment().subtract(1, 'month').endOf('month')],
+			'Tahun Ini': [moment().startOf('year'), moment().endOf('year')],
+			'Tahun Lalu': [moment().subtract(1, 'year').startOf('year'), moment().subtract(1, 'year').endOf('year')]
+		},
+		"alwaysShowCalendars": true,
+		"startDate": startDate,
+		"endDate": endDate,
+		"maxDate": moment(),
+		"opens": "right"
+	}, function(start, end, label) {
+		console.log('New date range selected: ' + start.format('YYYY-MM-DD') + ' to ' + end.format('YYYY-MM-DD') + ' (predefined range: ' + label + ')');
+		$('#field-date').val(start.format('YYYY/MM/DD') + ' - ' + end.format('YYYY/MM/DD'));
+		after_change(start.format('YYYY/MM/DD') + ' - ' + end.format('YYYY/MM/DD'));
+	});
+	function after_change(val) {
+		$.ajax({
+			url: "http://localhost/bo_nov/site/set_session_date/" + btoa('field-date') + '/' + btoa(val),
+			type: "GET",
+			success: function (res) {
+				console.log(res);
+			}
+		});
+	}
+</script>
+
 </html>

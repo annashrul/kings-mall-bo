@@ -138,7 +138,7 @@
 		},
 		//For custom messages
 		messages: {
-			namaTipe:{required: "Nama tidak boleh kosong!"},
+			namaTipe:{required: "tidak boleh kosong!"},
 		},
 		errorElement : 'div',
 		errorPlacement: function(error, element) {

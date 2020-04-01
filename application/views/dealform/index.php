@@ -114,39 +114,55 @@
 <div class="main-content">
 	<div class="dashboard-area">
 		<div class="container-fluid">
-
-			<div class="multisteps-form">
-				<!--progress bar-->
-				<div class="row">
-					<div class="col-12 col-lg-12 ml-auto mr-auto mb-4">
-						<div class="multisteps-form__progress">
-							<button class="multisteps-form__progress-btn js-active" type="button" title="Air">Tenant</button>
-							<button class="multisteps-form__progress-btn" type="button" title="Listrik">Unit</button>
+			<div class="card mt-3 fadeInUp animated" id="cdList">
+				<div class="card-body">
+					<h4 class="card-title">Deal Form</h4>
+					<hr>
+					<!-- <div class="col-12"> -->
+					<div class="row">
+						<div class="col-lg-3">
+							<div class="form-group mb-30">
+								<label for="">No LOI</label>
+								<input type="search" class="form-control" id="inputPassword2" placeholder="Masukan No LOI">
+							</div>
+						</div>
+						<div class="col-lg-1">
+							<button class="btn btn-primary" style="margin-top: 28px;">Cari</button>
+						</div>
+						<div class="col-lg-8">
+							<div class="multisteps-form__progress" style="margin-top: 26px;">
+								<button class="multisteps-form__progress-btn js-active" type="button" title="Air">Tenant</button>
+								<button class="multisteps-form__progress-btn" type="button" title="Listrik">Unit</button>
+							</div>
 						</div>
 					</div>
-				</div>
-				<!--form panels-->
-				<div class="row">
-					<div class="col-12 col-lg-12 m-auto">
-						<form class="multisteps-form__form">
-							<!--single form panel-->
-							<div
-								class="multisteps-form__panel shadow p-4 rounded bg-white js-active"
-								data-animation="scaleIn">
-								<h3 class="multisteps-form__title mb-5">Tenant Info</h3>
-								<?php include("tenant.php") ?>
+					<div class="multisteps-form">
+						<!--form panels-->
+						<div class="row">
+							<div class="col-12 col-lg-12 m-auto">
+								<form class="multisteps-form__form">
+									<!--single form panel-->
+									<div
+										class="multisteps-form__panel shadow p-4 rounded bg-white js-active"
+										data-animation="scaleIn">
+										<h3 class="multisteps-form__title mb-5">Tenant Info</h3>
+										<?php include("tenant.php") ?>
+									</div>
+									<!--single form panel-->
+									<div
+										class="multisteps-form__panel shadow p-4 rounded bg-white"
+										data-animation="scaleIn">
+										<h3 class="multisteps-form__title mb-5">Unit Info</h3>
+										<?php include("unit.php") ?>
+									</div>
+								</form>
 							</div>
-							<!--single form panel-->
-							<div
-								class="multisteps-form__panel shadow p-4 rounded bg-white"
-								data-animation="scaleIn">
-								<h3 class="multisteps-form__title mb-5">Unit Info</h3>
-								<?php include("unit.php") ?>
-							</div>
-						</form>
+						</div>
 					</div>
+
 				</div>
 			</div>
+
 
 		</div>
 	</div>

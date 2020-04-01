@@ -64,7 +64,6 @@
 					</div>
 				</div>
 			</div>
-
 		</div>
 	</div>
 </div>
@@ -83,7 +82,6 @@
 							<label for="<?=$field?>>">Nama</label>
 							<input type="text" name="<?=$field?>" class="form-control" id="<?=$field?>" autocomplete="off">
 						</div>
-
 					</div>
 				</div>
 				<div class="modal-footer">
@@ -103,7 +101,7 @@
 <script type="text/javascript">
 	// Example starter JavaScript for disabling form submissions if there are invalid fields
 	$(document).ready(function(){
-		loadData(1);
+		// loadData(1);
 	});
 
 	function loadData(page,data={}){
@@ -115,7 +113,7 @@
 			beforeSend: function() {$('body').append('<div class="first-loader"><img src="<?=base_url()?>assets/images/spin.svg"></div>');},
 			complete: function() {$('.first-loader').remove();},
 			success: function (res) {
-				if (res.status == 'success') {
+				if (res.status === 'success') {
 					console.log(res.result);
 				} else {
 					console.log(res.msg);
@@ -125,7 +123,7 @@
 	}
 
 	function showForm(param){
-		if(param == 'tipe'){
+		if(param === 'tipe'){
 			setTimeout(function () {
 				$("#namaTipe").focus();
 			}, 600);
@@ -156,14 +154,15 @@
 		},
 		submitHandler: function (form) {
 			$.ajax({
-				url: "<?=base_url().'masterdata/tipe/simpan?session='.$token?>",
+				url: "<?=base_url().$control.'/'.base64_decode($_GET['XYZ']).'/simpan?session='.$token?>",
 				type: "POST",
 				dataType: "JSON",
 				data: $("#formTipe").serialize(),
 				beforeSend: function() {$('body').append('<div class="first-loader"><img src="<?=base_url()?>assets/images/spin.svg"></div>');},
 				complete: function() {$('.first-loader').remove();},
 				success: function (res) {
-					if (res.status == 'success') {
+					if (res.status === 'success') {
+						// console.log(res);
 						$("#modalTipe").modal('hide');
 						document.getElementById("formUnit").reset();
 						$( "#formTipe" ).validate().resetForm();

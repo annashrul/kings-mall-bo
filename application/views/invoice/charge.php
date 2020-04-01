@@ -7,9 +7,9 @@
 		height: 100%;
 	}
 </style>
+
 <div class="main-content">
 	<div class="watermark"></div>
-
 	<div class="container-fluid">
 		<div class="row">
 			<div class="col-12" style="padding:10px;border: 2px solid darkgoldenrod;">
@@ -22,7 +22,8 @@
 						<p class="title-kwitansi">THE KINGS SHOPPING CENTER
 							<br/>JL KEPATIHAN 11 12 # BANDUNG # INDONESIA
 							<br/>+621223165037
-							<br/>MANAGEMENT@THEKINGS.CO.ID # WWW.THEKING.ID</p>
+							<br/>MANAGEMENT@THEKINGS.CO.ID # WWW.THEKING.ID
+						</p>
 					</div>
 				</div>
 			</div>

@@ -136,35 +136,34 @@
 							<div
 								class="multisteps-form__panel shadow p-4 rounded bg-white js-active"
 								data-animation="scaleIn">
-								<h3 class="multisteps-form__title mb-5">Tagihan Air</h3>
+								<h3 class="multisteps-form__title mb-5"><a href="<?=base_url().'tagihan?session='.$token.'&q='.base64_encode('timeline');?>"><i class="fa fa-arrow-circle-left"></i></a> Tagihan Air</h3>
 								<?php include("air.php") ?>
 							</div>
 							<!--single form panel-->
 							<div
 								class="multisteps-form__panel shadow p-4 rounded bg-white"
 								data-animation="scaleIn">
-								<h3 class="multisteps-form__title mb-5">Tagihan Listrik</h3>
+								<h3 class="multisteps-form__title mb-5"><a href="<?=base_url().'tagihan?session='.$token.'&q='.base64_encode('timeline');?>"><i class="fa fa-arrow-circle-left"></i></a> Tagihan Listrik</h3>
 								<?php include("listrik.php") ?>
 							</div>
 							<!--single form panel-->
 							<div
 								class="multisteps-form__panel shadow p-4 rounded bg-white"
 								data-animation="scaleIn">
-								<h3 class="multisteps-form__title mb-5">Tagihan Servis</h3>
+								<h3 class="multisteps-form__title mb-5"><a href="<?=base_url().'tagihan?session='.$token.'&q='.base64_encode('timeline');?>"><i class="fa fa-arrow-circle-left"></i></a> Tagihan Servis</h3>
 								<?php include("service.php") ?>
 							</div>
 							<!--single form panel-->
 							<div
 								class="multisteps-form__panel shadow p-4 rounded bg-white"
 								data-animation="scaleIn">
-								<h3 class="multisteps-form__title mb-5">Tagihan PBB</h3>
+								<h3 class="multisteps-form__title mb-5"><a href="<?=base_url().'tagihan?session='.$token.'&q='.base64_encode('timeline');?>"><i class="fa fa-arrow-circle-left"></i></a> Tagihan PBB</h3>
 								<?php include("pbb.php") ?>
 							</div>
 						</form>
 					</div>
 				</div>
 			</div>
-
 			<!-- end fill this part -->
 		</div>
 	</div>

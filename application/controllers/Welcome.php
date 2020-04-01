@@ -22,4 +22,27 @@ class Welcome extends CI_Controller {
 	{
 		$this->load->view('welcome_message');
 	}
+	public function set_session_date($session_name_, $value_) {
+		$value = base64_decode($value_);
+		$session_name = base64_decode($session_name_);
+		$this->session->set_userdata('search', array($session_name=>$value));
+	}
+	public function get_session_date($type) {
+		$field = 'field-date';
+		$date = $this->session->search[$field];
+		$explode_date = explode(' - ', $date);
+		$get_date_1 = explode('/', $explode_date[0]);
+		$get_date_2 = explode('/', $explode_date[1]);
+		$date1 = $get_date_1[1].'/'.$get_date_1[2].'/'.$get_date_1[0];
+		$date2 = $get_date_2[1].'/'.$get_date_2[2].'/'.$get_date_2[0];
+		if (isset($date) && $date!=null) {
+			if ($type == 'startDate') {
+				echo $date1;
+			} else {
+				echo $date2;
+			}
+		} else {
+			echo date('m/d/Y');
+		}
+	}
 }
