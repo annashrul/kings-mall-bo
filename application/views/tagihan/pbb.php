@@ -5,36 +5,33 @@
 				<label class="col-4 col-sm-4 text-left">No. LOI</label>
 				<!-- <input type="text" class="form-control col-8 col-sm-8" aria-describedby="textHelp" placeholder=""> -->
 				<div class="input-group col-8 col-sm-8" style="padding: unset;">
-					<input type="text" class="form-control" placeholder="" aria-label="">
-					<div class="input-group-append">
-						<button class="btn btn-dark  " type="button">Cari</button>
-					</div>
+					<input type="text" class="form-control" placeholder="" aria-label="" readonly>
 				</div>
 				<small id="textHelp" class="form-text text-muted"></small>
 			</div>
 			<div class="form-group row">
 				<label class="col-4 col-sm-4 text-left">Unit</label>
-				<input type="text" class="form-control col-8 col-sm-8" aria-describedby="textHelp" placeholder="">
+				<input type="text" class="form-control col-8 col-sm-8" aria-describedby="textHelp" placeholder="" readonly>
 				<small id="textHelp" class="form-text text-muted"></small>
 			</div>
 			<div class="form-group row">
 				<label class="col-4 col-sm-4 text-left">Nama Perusahaan</label>
-				<input type="text" class="form-control col-8 col-sm-8" aria-describedby="textHelp" placeholder="">
+				<input type="text" class="form-control col-8 col-sm-8" aria-describedby="textHelp" placeholder="" readonly>
 				<small id="textHelp" class="form-text text-muted"></small>
 			</div>
 			<div class="form-group row">
 				<label class="col-4 col-sm-4 text-left">Nama Penanggung Jawab</label>
-				<input type="text" class="form-control col-8 col-sm-8" aria-describedby="textHelp" placeholder="">
+				<input type="text" class="form-control col-8 col-sm-8" aria-describedby="textHelp" placeholder="" readonly>
 				<small id="textHelp" class="form-text text-muted"></small>
 			</div>
 			<div class="form-group row">
 				<label class="col-4 col-sm-4 text-left">Periode Sewa Awal</label>
-				<input type="text" class="form-control col-8 col-sm-8" aria-describedby="textHelp" placeholder="">
+				<input type="text" class="form-control col-8 col-sm-8" aria-describedby="textHelp" placeholder="" readonly>
 				<small id="textHelp" class="form-text text-muted"></small>
 			</div>
 			<div class="form-group row">
 				<label class="col-4 col-sm-4 text-left">Tahun</label>
-				<input type="text" class="form-control col-8 col-sm-8" data-provide="datepicker" data-date-min-view-mode="2" data-date-autoclose="true">
+				<input type="text" class="form-control col-8 col-sm-8" data-provide="datepicker" data-date-min-view-mode="2" data-date-autoclose="true" readonly>
 				<small id="textHelp" class="form-text text-muted"></small>
 			</div>
 			<div class="form-group row">
@@ -46,7 +43,7 @@
 							<th>No</th>
 							<th>Lantai</th>
 							<th>Unit</th>
-							<th>Luas (M3)</th>
+							<th>Luas (M<sup>3</sup>)</th>
 						</tr>
 						</thead>
 						<tbody>
@@ -64,32 +61,32 @@
 		<div class="col-6 col-sm-6">
 			<div class="form-group row">
 				<label class="col-4 col-sm-4 text-left">Total Luas Bangunan</label>
-				<input type="text" class="form-control col-8 col-sm-8" aria-describedby="textHelp" placeholder="">
+				<input type="text" class="form-control col-8 col-sm-8" aria-describedby="textHelp" placeholder="" readonly>
 				<small id="textHelp" class="form-text text-muted"></small>
 			</div>
 			<div class="form-group row">
 				<label class="col-4 col-sm-4 text-left">Total Luas Sewa Tenant</label>
-				<input type="text" class="form-control col-8 col-sm-8" aria-describedby="textHelp" placeholder="">
+				<input type="text" class="form-control col-8 col-sm-8" aria-describedby="textHelp" placeholder="" readonly>
 				<small id="textHelp" class="form-text text-muted"></small>
 			</div>
 			<div class="form-group row">
 				<label class="col-4 col-sm-4 text-left">Luas Sewa Tenant</label>
-				<input type="text" class="form-control col-8 col-sm-8" aria-describedby="textHelp" placeholder="">
+				<input type="text" class="form-control col-8 col-sm-8" aria-describedby="textHelp" placeholder="" readonly>
 				<small id="textHelp" class="form-text text-muted"></small>
 			</div>
 			<div class="form-group row">
 				<label class="col-4 col-sm-4 text-left">NJOP</label>
-				<input type="text" class="form-control col-8 col-sm-8" aria-describedby="textHelp" placeholder="">
+				<input type="text" class="form-control col-8 col-sm-8" aria-describedby="textHelp" placeholder="" readonly>
 				<small id="textHelp" class="form-text text-muted"></small>
 			</div>
 			<div class="form-group row">
 				<label class="col-4 col-sm-4 text-left">Faktor (%)</label>
-				<input type="text" class="form-control col-8 col-sm-8" aria-describedby="textHelp" placeholder="">
+				<input type="text" class="form-control col-8 col-sm-8" aria-describedby="textHelp" placeholder="" readonly>
 				<small id="textHelp" class="form-text text-muted"></small>
 			</div>
 			<div class="form-group row">
 				<label class="col-4 col-sm-4 text-left">Tagihan</label>
-				<input type="text" class="form-control col-8 col-sm-8" aria-describedby="textHelp" placeholder="">
+				<input type="text" class="form-control col-8 col-sm-8" aria-describedby="textHelp" placeholder="" readonly>
 				<small id="textHelp" class="form-text text-muted"></small>
 			</div>
 			<div class="form-group row">
@@ -98,13 +95,13 @@
 				<small id="textHelp" class="form-text text-muted"></small>
 			</div>
 			<div class="form-group row">
-				<label class="col-4 col-sm-4 text-left">Jumlah Potongan</label>
-				<input type="text" class="form-control col-8 col-sm-8" aria-describedby="textHelp" placeholder="">
+				<label class="col-4 col-sm-4 text-left">Diskon</label>
+				<input type="text" class="form-control col-8 col-sm-8" aria-describedby="textHelp" placeholder="" readonly>
 				<small id="textHelp" class="form-text text-muted"></small>
 			</div>
 			<div class="form-group row">
 				<label class="col-4 col-sm-4 text-left">Total Potongan</label>
-				<input type="text" class="form-control col-8 col-sm-8" aria-describedby="textHelp" placeholder="">
+				<input type="text" class="form-control col-8 col-sm-8" aria-describedby="textHelp" placeholder="" readonly>
 				<small id="textHelp" class="form-text text-muted"></small>
 			</div>
 		</div>

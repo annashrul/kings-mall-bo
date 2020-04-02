@@ -121,7 +121,9 @@
 				<div class="row">
 					<div class="col-12 col-lg-12 ml-auto mr-auto mb-4">
 						<div class="multisteps-form__progress">
-							<button class="multisteps-form__progress-btn js-active" type="button" title="Air">Air</button>
+							<button class="multisteps-form__progress-btn js-active" type="button" title="Cicilan">Cicilan</button>
+							<button class="multisteps-form__progress-btn" type="button" title="Air">DP</button>
+							<button class="multisteps-form__progress-btn" type="button" title="Air">Air</button>
 							<button class="multisteps-form__progress-btn" type="button" title="Listrik">Listrik</button>
 							<button class="multisteps-form__progress-btn" type="button" title="Servis">Servis</button>
 							<button class="multisteps-form__progress-btn" type="button" title="Servis">PBB</button>
@@ -135,6 +137,20 @@
 							<!--single form panel-->
 							<div
 								class="multisteps-form__panel shadow p-4 rounded bg-white js-active"
+								data-animation="scaleIn">
+								<h3 class="multisteps-form__title mb-5"><a href="<?=base_url().'tagihan?session='.$token.'&q='.base64_encode('timeline');?>"><i class="fa fa-arrow-circle-left"></i></a> Tagihan Cicilan</h3>
+								<?php include("cicilan.php") ?>
+							</div>
+							<!--single form panel-->
+							<div
+								class="multisteps-form__panel shadow p-4 rounded bg-white"
+								data-animation="scaleIn">
+								<h3 class="multisteps-form__title mb-5"><a href="<?=base_url().'tagihan?session='.$token.'&q='.base64_encode('timeline');?>"><i class="fa fa-arrow-circle-left"></i></a> Tagihan DP</h3>
+								<?php include("dp.php") ?>
+							</div>
+							<!--single form panel-->
+							<div
+								class="multisteps-form__panel shadow p-4 rounded bg-white"
 								data-animation="scaleIn">
 								<h3 class="multisteps-form__title mb-5"><a href="<?=base_url().'tagihan?session='.$token.'&q='.base64_encode('timeline');?>"><i class="fa fa-arrow-circle-left"></i></a> Tagihan Air</h3>
 								<?php include("air.php") ?>
@@ -357,15 +373,21 @@
 
 				// activePanelNum++;
 				// localStorage.setItem("activePanel", activePanelNum);
+				var v_cicilan = document.getElementsByName('t_cicilan[]');
 				var v_air = document.getElementsByName('t_air[]');
 				var v_listrik = document.getElementsByName('t_listrik[]');
 				var v_service = document.getElementsByName('t_service[]');
 				var v_pbb = document.getElementsByName('t_pbb[]');
 				// var val = [];
+				var inp_cicilan = [];
 				var inp_air = [];
 				var inp_listrik = [];
 				var inp_service = [];
 				var inp_pbb = [];
+				for (var i = 0; i <v_cicilan.length; i++) {
+					inp_cicilan.push(v_cicilan[i].value);
+					// alert("t_air["+i+"].value="+inp.value);
+				}
 				for (var i = 0; i <v_air.length; i++) {
 					inp_air.push(v_air[i].value);
 					// alert("t_air["+i+"].value="+inp.value);
@@ -375,16 +397,16 @@
 					// alert("t_air["+i+"].value="+inp.value);
 				}
 				// val.push(inp);
-				if(inp_air.includes("") == true && activePanelNum == 0){
-					alert('data masih kosong 1');
+				if(inp_cicilan.includes("") === true && activePanelNum === 0){
+					// alert('data masih kosong 1');
 					console.log(activePanelNum);
 				} else {
 					activePanelNum++;
 					localStorage.setItem("activePanel", activePanelNum);
 
-					if(inp_listrik.includes("") != true && activePanelNum != 1){
+					if(inp_listrik.includes("") !== true && activePanelNum !== 1){
 
-						alert('data masih kosong 2');
+						// alert('data masih kosong 2');
 					} else {
 
 					}
@@ -400,7 +422,7 @@
 
 		});
 
-	$('#next_air').click(e =>{
+	$('#next_cicilan').click(e =>{
 
 		const eventTarget = e.target;
 
@@ -417,15 +439,21 @@
 			.indexOf(activePanel);
 		// activePanelNum++;
 		// localStorage.setItem("activePanel", activePanelNum);
+		var v_cicilan = document.getElementsByName('t_cicilan[]');
 		var v_air = document.getElementsByName('t_air[]');
 		var v_listrik = document.getElementsByName('t_listrik[]');
 		var v_service = document.getElementsByName('t_service[]');
 		var v_pbb = document.getElementsByName('t_pbb[]');
 		// var val = [];
+		var inp_cicilan = [];
 		var inp_air = [];
 		var inp_listrik = [];
 		var inp_service = [];
 		var inp_pbb = [];
+		for (var i = 0; i <v_cicilan.length; i++) {
+			inp_cicilan.push(v_cicilan[i].value);
+			// alert("t_air["+i+"].value="+inp.value);
+		}
 		for (var i = 0; i <v_air.length; i++) {
 			inp_air.push(v_air[i].value);
 			// alert("t_air["+i+"].value="+inp.value);
@@ -435,8 +463,8 @@
 			// alert("t_air["+i+"].value="+inp.value);
 		}
 		// val.push(inp);
-		if(inp_air.includes("") == true && activePanelNum == 0){
-			alert('data masih kosong 1');
+		if(inp_cicilan.includes("") === true && activePanelNum === 0){
+			// alert('data masih kosong 1');
 			console.log(activePanelNum);
 		} else {
 			activePanelNum++;

@@ -27,7 +27,13 @@
 											<span class="vertical-date">
                                         		<button class="btn btn-primary btn-sm" onclick="showForm('detail');">Detail</button>
 												<a href="<?=base_url().'tagihan?session='.$token.q(1,'registrasi').q(2,'lanjut');?>" class="btn btn-primary btn-sm" >Lanjut</a>
-												<button class="btn btn-primary btn-sm">Cetak</button>
+												<button type="button" class="btn dropdown-toggle btn-primary btn-sm" data-toggle="dropdown" aria-haspopup="true" aria-expanded="false">Cetak</button>
+												<?php $controller='invoice'; $side_menu=null; $side_menu=array('kwitansi','listrik','air','charge','sewa_kontrak'); ?>
+												<div class="dropdown-menu language-dropdown dropdown-menu-right">
+													<?php foreach($side_menu as $key => $value):?>
+														<a class="dropdown-item" href="<?=base_url().$controller.'?session='.$token.q(1,$value)?>"><?=rplc_($value)?></a>
+													<?php endforeach; ?>
+												</div>
                                     		</span>
 										</div>
 									</div>
