@@ -37,7 +37,7 @@
 	function get_daterange(type) {
 		var output = null;
 		$.ajax({
-			url: "http://localhost/bo_nov/site/get_session_date/" + type,
+			url: "<?=base_url().'welcome/'?>get_session_date/" + type,
 			type: "GET",
 			async: false,
 			success: function (res) {
@@ -76,7 +76,7 @@
 	});
 	function after_change(val) {
 		$.ajax({
-			url: "http://localhost/bo_nov/site/set_session_date/" + btoa('field-date') + '/' + btoa(val),
+			url: "<?=base_url().'welcome/'?>set_session_date/" + btoa('field-date') + '/' + btoa(val),
 			type: "GET",
 			success: function (res) {
 				console.log(res);
