@@ -18,7 +18,7 @@
 									<i class="<?=$i%2!=0?'icon_info_alt text-warning' : 'icon_check_alt text-success'?> font-30 "></i>
 								</div>
 								<div class="media-body">
-									<h3 class="mb-2 font-24">TRX01092020</h3>
+									<h3 class="mb-2 font-24">0920</h3>
 									<div class="mb-0 font-14 font-weight-bold">20 desember 2020</div>
 								</div>
 

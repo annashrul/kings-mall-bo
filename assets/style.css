@@ -109,17 +109,17 @@ Last Updated: Oct 24, 2019
 ------------------------------------- */
 /* Import Fonts & CSS Files */
 @import url("https://fonts.googleapis.com/css?family=IBM+Plex+Sans:300,400,500,600,700|Open+Sans:400,600&amp;display=swap");
-@import url("http://localhost/kings_management/assets/css/bootstrap.min.css");
-@import url("http://localhost/kings_management/assets/css/owl.carousel.min.css");
-@import url("http://localhost/kings_management/assets/css/animate.css");
-@import url("http://localhost/kings_management/assets/css/nice-select.css");
-@import url("http://localhost/kings_management/assets/css/jquery-ui.min.css");
-@import url("http://localhost/kings_management/assets/css/default-assets/themify-icons.css");
-@import url("http://localhost/kings_management/assets/css/font-awesome.min.css");
-@import url("http://localhost/kings_management/assets/css/pe-icon-7-stroke.min.css");
-@import url("http://localhost/kings_management/assets/css/style.css");
-@import url("http://localhost/kings_management/assets/css/material-design-iconic-font.min.css");
-@import url("http://localhost/kings_management/assets/etline/style.css");
+@import url("http://203.190.54.4/bo_kings/assets/css/bootstrap.min.css");
+@import url("http://203.190.54.4/bo_kings/assets/css/owl.carousel.min.css");
+@import url("http://203.190.54.4/bo_kings/assets/css/animate.css");
+@import url("http://203.190.54.4/bo_kings/assets/css/nice-select.css");
+@import url("http://203.190.54.4/bo_kings/assets/css/jquery-ui.min.css");
+@import url("http://203.190.54.4/bo_kings/assets/css/default-assets/themify-icons.css");
+@import url("http://203.190.54.4/bo_kings/assets/css/font-awesome.min.css");
+@import url("http://203.190.54.4/bo_kings/assets/css/pe-icon-7-stroke.min.css");
+@import url("http://203.190.54.4/bo_kings/assets/css/style.css");
+@import url("http://203.190.54.4/bo_kings/assets/css/material-design-iconic-font.min.css");
+@import url("http://203.190.54.4/bo_kings/assets/etline/style.css");
 /* :: Reboot CSS */
 * {
   margin: 0;
